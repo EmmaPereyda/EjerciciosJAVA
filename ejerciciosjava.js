@@ -130,8 +130,131 @@ public class Practicas {
 	            System.out.println(anio + " no es un año bisiesto");
 	        }
 	        
-	        
-	        
+	        //////////////////////////////////////////////////////////////////////////////////
+            //declaramos el string a voltear
+			String original = "emma";
+			       //metodo
+			       StringBuilder severla = new StringBuilder();
+			       
+			       severla.append(original);
+			       severla = severla.reverse();
+			       
+			       //imprimos variable al reves (severla)
+			       System.out.println( severla.toString());
+			       
+
+
+            /////////////////////////////////////////////////////////////////////////////////
+			  //declaramnois varuiables
+			       int x = 6;
+			       int y =4;
+			       
+			       int acarreo;
+			       //ciclo para moverla y sumarla por bits
+			       while(y != 0) {
+			       	acarreo = x & y;
+			       	x = x ^ y;
+			       	
+			       	y = acarreo << 1;
+			       }
+			       //imprimimos resultado
+			       System.out.println(x);
+			       
+			      ///////////////////////////////////////////////////////////////////////// 
+			       //declaramos variables
+			       int contador = 0;
+			       int numero = 2;
+			       
+
+				   //inicio del ciclo while
+			       while (contador < 100) {
+					   //condicional if
+			           if (Primo(numero)) {
+			               System.out.println(numero);
+			               contador++;
+			           }
+			           numero++;
+			       }
+			   }
+			       
+			      public static boolean Primo(int numero) {
+			      if (numero <= 1) {
+			           return false;
+			       }
+			      for (int i = 2; i <= Math.sqrt(numero); i++) {
+			      if (numero % i == 0) {
+			          return false;
+			           }
+			       }
+			        return true;
+					 
+					 
+					 
+					 /////////////////////////////////////////////////////////////////////////////////////////
+					 //programa para saber si un numero par es palindromo
+					Scanner input = new Scanner(System.in);
+			       //pedimos al usuario que ingrese un numero 
+			       System.out.print("Ingrese un número de dos dígitos: ");
+				   //guardamos el numero ingresado
+			       int numero = input.nextInt();
+			    
+				   //condicional para que indica si es palindromo o no
+			       if (esPalindromo(numero)) {
+			           System.out.println(numero + " es un palíndromo.");
+			       } else {
+			           System.out.println(numero + " no es un palíndromo.");
+			       }
+			   }
+			   //mandamos a llamar el metodo con un argumento
+			   public static boolean esPalindromo(int numero) {
+				//declaramnos variables
+			       int original = numero;
+			       int invertido = 0;
+				   //iniciamos ciclo while
+			       while (numero > 0) {
+			           int digito = numero % 10;
+			           invertido = invertido * 10 + digito;
+			           numero = numero / 10;
+			       }
+				   //retornamos el resultado
+			       return original == invertido && original >= 10 && original <= 99;
+					
+					
+	        ///////////////////////////////////////////////////////////////////
+
+			//ejercicio para encopntrar facotiral de un numero
+			//metodo factorial
+	public static int factorial(int n) {
+		//condicional if para parametros del valor
+	    if (n == 0 || n == 1) {
+			//retorno de valor
+	        return 1;
+	    }
+	    //retorno de la funcion factorial
+	    return n * factorial(n - 1);
+	}
+	public static void main(String[] args) {
+		
+
+	        //asignacion del valor de las variables
+		    int numero = 10;
+		    int factorial = factorial(numero);
+		    //impresion del resultado
+		    System.out.println("El factorial de " + numero + " es " + factorial);
+		}
+
+
+
+        ////////////////////////////////////////////////////////////////////////////
+		//metodo para eliminar los espacios de un String
+        String textoConEspacios = "   e m m a   ";
+        String textoSinEspacios = textoConEspacios.replaceAll("\\s+", "");
+        System.out.println(textoSinEspacios); 
+
+		//////////////////////////////////////////////////////////////////////////////
+
+        
+	}
 	        
 	        
 	        
